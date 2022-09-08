@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list part</title>
+</head>
+<body>
+    <h3>List Part</h3>
+
+    <table border="1">
+        <th>
+            <td>Car Name</td>
+            <td>Brand Name</td>
+            <td>Category</td>
+            <td>Description</td>
+            <td>Is new</td>
+            <td>Owner Name</td>
+            <td>Action</td>
+        </th>
+        {% for i in data %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.car_name }}</td>
+                <td>{{ i.brand_name }}</td>
+                <td>{{ i.category }}</td>
+                <td>{{ i.desc }}</td>
+                <td>{{ i.is_new }}</td>
+                <td>{{ i.owner_name }}</td>
+                <td> <a href="../update-part/{{i.id}}" >Update</a>, 
+                     <a href="../delete-part/{{i.id}}" >Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

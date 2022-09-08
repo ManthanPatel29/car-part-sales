@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Part</title>
+    <style>
+        input{
+            display: block;
+            margin: 3px 0px;
+            padding: 5px 3px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Insert Part Information</h3>
+    <form action="/insert-part/" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Part Name" name="part_name" required>
+        <input type="text" placeholder="Car Name" name="car_name" required>
+        <input type="text" placeholder="Brand Name" name="brand_name" required>
+        <input type="text" placeholder="Category" name="category" required>
+        <textarea placeholder="description" name="desc" rows="3" ></textarea>
+        <br/> <br/><label>Is new</label><br/>
+        <input type="radio" style="display:inline;" name="is_new" value="True" required> YES <br/>
+        <input type="radio" style="display:inline;" name="is_new" value="False" required> NO
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
