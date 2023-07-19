@@ -6,11 +6,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: actions/setup-python@v3
-            with:
-                python-version: "3.9"
-            - run: python -m venv venv
-            - run: source ./venv/bin/activate
-            - run: pip3 install -r requirement.txt
-            - run: pip3 install isort
-            - run: isort --check-only .
+            - name: setup python
+                uses: actions/setup-python@v3
+                with:
+                    python-version: "3.9"
+            - name: setting up project
+                run: python -m venv venv
+                run: source ./venv/bin/activate
+                run: pip3 install -r requirement.txt
+                run: pip3 install isort
+            - name: Checking isort command
+                run: isort --check-only .
