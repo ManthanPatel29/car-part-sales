@@ -1,7 +1,0 @@
-{
-	"prettier.tabWidth": 4,
-	"editor.useTabStops": false,
-	"workbench.editor.highlightModifiedTabs": false,
-	"editor.tabFocusMode": false,
-	"editor.stablePeek": false
-}
