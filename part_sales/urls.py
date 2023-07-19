@@ -1,5 +1,7 @@
 from django.urls import path
+
 from .views import *
+
 urlpatterns = [
     path('', home.as_view()),
     path('insert-part/', insert_part.as_view()),

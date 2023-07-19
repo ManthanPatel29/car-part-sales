@@ -1,8 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.views import View
-from .models import part_info
 from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.views import View
+
+from .models import part_info
+
+
 # Create your views here.
 class home(View):
     def get(self, request):
