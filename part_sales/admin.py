@@ -1,5 +1,7 @@
 from django.contrib import admin
-from . models import part_info
+
+from .models import part_info
+
 # Register your models here.
 
 

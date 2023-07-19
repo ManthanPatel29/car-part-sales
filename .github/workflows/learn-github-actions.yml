@@ -1,0 +1,28 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning Github Actions
+on: [push]
+jobs:
+  code-quality-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+          
+      - name: setting up project
+        run: python -m venv venv
+        
+      - name: activate virtual environment
+        run: source ./venv/bin/activate
+        
+      - name: install project dependencies
+        run: pip3 install -r requirement.txt
+        
+      - name: install isort
+        run: pip3 install isort
+        
+      - name: Checking isort command
+        run: isort --check-only .
